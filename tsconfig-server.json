@@ -1,0 +1,13 @@
+{
+    "extends": "./tsconfig.json",
+    "files": ["server.ts", "polyfills.ts"],
+    "include": ["./server/**/*.ts"],
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2017",
+        "outDir": "dist",
+        "noEmit": false,
+        "isolatedModules": false,
+        "jsx": "react"
+    }
+}

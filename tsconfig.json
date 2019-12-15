@@ -1,0 +1,30 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "allowJs": false,
+        "jsx": "preserve",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "preserveConstEnums": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "noImplicitReturns": true,
+        "resolveJsonModule": true,
+        "noEmit": true,
+        "typeRoots": ["./node_modules/@types", "./types"],
+        "lib": ["esnext", "es6", "dom", "es2016"],
+        "baseUrl": ".",
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true
+    },
+    "exclude": ["node_modules", "dist", ".next", "out"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}
