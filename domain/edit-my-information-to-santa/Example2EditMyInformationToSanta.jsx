@@ -114,7 +114,7 @@ const EditMyInformationToSanta = ({ person }) => {
                         }}
                     />
 
-                    <span>Your wish list</span>
+                    <span>My wish list:</span>
                     <ul>
                         {wishList.map(wish => (
                             <li>{wish}</li>
