@@ -11,7 +11,7 @@ const EditMyInformationToSanta = () => {
         address: '',
         gender: null,
         hasFireplace: null,
-        naughtyOrNice: null,
+        hasBeenNice: null,
     });
 
     const [letterToSanta, setLetterToSanta] = useState('');

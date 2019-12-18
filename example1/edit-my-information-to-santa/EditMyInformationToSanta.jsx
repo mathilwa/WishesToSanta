@@ -7,7 +7,7 @@ const EditMyInformationToSanta = () => {
     const [gender, setGender] = useState(null);
     const [address, setAddress] = useState('');
     const [hasFireplace, setHasFireplace] = useState(null);
-    const [naughtyOrNice, setNaughtyOrNice] = useState(null);
+    const [hasBeenNice, setHasBeenNice] = useState(null);
     const [letterToSanta, setLetterToSanta] = useState('');
     const [wish, setWish] = useState('');
     const [wishList, setWishList] = useState([]);
@@ -105,16 +105,16 @@ const EditMyInformationToSanta = () => {
                     <input
                         type="radio"
                         value={false}
-                        checked={naughtyOrNice === false}
-                        onChange={event => setNaughtyOrNice(event.target.value)}
+                        checked={hasBeenNice === false}
+                        onChange={event => setHasBeenNice(event.target.value)}
                     />
 
                     <label>Nice</label>
                     <input
                         type="radio"
                         value={true}
-                        checked={naughtyOrNice}
-                        onChange={event => setNaughtyOrNice(event.target.value)}
+                        checked={hasBeenNice}
+                        onChange={event => setHasBeenNice(event.target.value)}
                     />
                 </div>
 

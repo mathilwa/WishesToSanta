@@ -10,7 +10,7 @@ const EditMyInformationToSanta = () => {
     const [gender, setGender] = useState(null);
     const [address, setAddress] = useState('');
     const [hasFireplace, setHasFireplace] = useState(null);
-    const [naughtyOrNice, setNaughtyOrNice] = useState(null);
+    const [hasBeenNice, setHasBeenNice] = useState(null);
     const [letterToSanta, setLetterToSanta] = useState('');
     const [wish, setWish] = useState('');
     const [wishList, setWishList] = useState([]);
@@ -24,7 +24,7 @@ const EditMyInformationToSanta = () => {
             gender,
             address,
             hasFireplace,
-            naughtyOrNice,
+            hasBeenNice,
             letterToSanta,
             wishList,
         });
@@ -91,8 +91,8 @@ const EditMyInformationToSanta = () => {
                         toggleValue1="naughty"
                         label2="Nice"
                         toggleValue2="nice"
-                        value={naughtyOrNice}
-                        onChange={event => setNaughtyOrNice(event.target.value)}
+                        value={hasBeenNice}
+                        onChange={event => setHasBeenNice(event.target.value)}
                     />
                 </div>
 

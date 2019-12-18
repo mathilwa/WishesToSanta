@@ -4,7 +4,7 @@ import TextInputWithLabel from '../../components/text-input/TextInputWithLabel';
 import RadioToggle from '../../components/radio-toggle/RadioToggle';
 
 const AboutMe = ({ me, onMeChange }) => {
-    const { name, age, gender, address, hasFireplace, naughtyOrNice } = me;
+    const { name, age, gender, address, hasFireplace, hasBeenNice } = me;
     return (
         <div>
             <h2>About me</h2>
@@ -64,8 +64,8 @@ const AboutMe = ({ me, onMeChange }) => {
                     toggleValue1="naughty"
                     label2="Nice"
                     toggleValue2="nice"
-                    value={naughtyOrNice}
-                    onChange={event => onMeChange({ ...me, naughtyOrNice: event.target.value })}
+                    value={hasBeenNice}
+                    onChange={event => onMeChange({ ...me, hasBeenNice: event.target.value })}
                 />
             </div>
         </div>
