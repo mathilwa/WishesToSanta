@@ -107,6 +107,7 @@ const EditMyInformationToSanta = ({ person }) => {
 
                     <button
                         type="button"
+                        value="Add wish"
                         onClick={() => {
                             setWishList(wishList.concat(wish));
                             setWish('');

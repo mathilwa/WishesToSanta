@@ -15,6 +15,7 @@ const MyWishes = ({ wish, wishList, onWishChange, onWishListChange }) => (
 
         <button
             type="button"
+            value="Add wish"
             onClick={() => {
                 onWishListChange(wishList.concat(wish));
                 onWishChange('');
