@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { saveMyInformationToSanta } from '../../api/santa-api';
-import TextInputWithLabel from '../../components/text-input/TextInputWithLabel';
-import RadioToggle from '../../components/radio-toggle/RadioToggle';
+import TextInputWithLabel from '../../example4/components/text-input/TextInputWithLabel';
+import RadioToggle from '../../example4/components/radio-toggle/RadioToggle';
 
-const EditMyInformationToSanta = ({ person }) => {
+const EditMyInformationToSanta = () => {
     const [name, setName] = useState('');
 
     const [age, setAge] = useState('');

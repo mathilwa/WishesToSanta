@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TextInputWithLabel from '../../components/text-input/TextInputWithLabel';
+import WishList from '../../components/wish-list/WishList';
 
 const MyWishes = ({ wish, wishList, onWishChange, onWishListChange }) => (
     <div>
@@ -23,11 +24,7 @@ const MyWishes = ({ wish, wishList, onWishChange, onWishListChange }) => (
         />
 
         <span>Your wish list</span>
-        <ul>
-            {wishList.map(wish => (
-                <li>{wish}</li>
-            ))}
-        </ul>
+        <WishList wishList={wishList} />
     </div>
 );
 export default MyWishes;

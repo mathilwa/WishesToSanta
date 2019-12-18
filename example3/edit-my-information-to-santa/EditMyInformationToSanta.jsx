@@ -4,7 +4,7 @@ import AboutMe from './AboutMe';
 import MyWishes from './MyWishes';
 import LetterToSanta from './LetterToSanta';
 
-const EditMyInformationToSanta = ({ person }) => {
+const EditMyInformationToSanta = () => {
     const [me, setMeState] = useState({
         name: '',
         age: '',

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { saveMyInformationToSanta } from '../../api/santa-api';
 
-const EditMyInformationToSanta = ({ person }) => {
+const EditMyInformationToSanta = () => {
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
     const [gender, setGender] = useState(null);
