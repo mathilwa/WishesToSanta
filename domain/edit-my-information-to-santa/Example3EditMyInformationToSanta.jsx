@@ -30,7 +30,7 @@ const EditMyInformationToSanta = ({ person }) => {
 
     return (
         <div>
-            <h1>Hi, santa! This is me</h1>
+            <h1>Hi, Santa! This is me</h1>
             <form>
                 <AboutMe me={me} onMeChange={updatedMeState => setMeState(updatedMeState)} />
 
@@ -38,7 +38,7 @@ const EditMyInformationToSanta = ({ person }) => {
 
                 <MyWishes wish={wish} wishList={wishList} onWishChange={setWish} onWishListChange={setWishList} />
 
-                <button type="submit" onClick={() => submitMyInformationToSanta()} />
+                <button type="submit" onClick={submitMyInformationToSanta} />
             </form>
         </div>
     );

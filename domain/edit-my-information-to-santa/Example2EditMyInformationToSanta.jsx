@@ -5,11 +5,12 @@ import RadioToggle from '../../components/radio-toggle/RadioToggle';
 
 const EditMyInformationToSanta = ({ person }) => {
     const [name, setName] = useState('');
+
     const [age, setAge] = useState('');
     const [gender, setGender] = useState(null);
     const [address, setAddress] = useState('');
     const [hasFireplace, setHasFireplace] = useState(null);
-    const [naugtyOrNice, setNaughtyOrNice] = useState(null);
+    const [naughtyOrNice, setNaughtyOrNice] = useState(null);
     const [letterToSanta, setLetterToSanta] = useState('');
     const [wish, setWish] = useState('');
     const [wishList, setWishList] = useState([]);
@@ -23,7 +24,7 @@ const EditMyInformationToSanta = ({ person }) => {
             gender,
             address,
             hasFireplace,
-            hasBeenNice,
+            naughtyOrNice,
             letterToSanta,
             wishList,
         });
@@ -31,25 +32,26 @@ const EditMyInformationToSanta = ({ person }) => {
 
     return (
         <div>
-            <h1>Hi, santa! This is me</h1>
+            <h1>Hi, Santa! This is me</h1>
             <form>
                 <h2>About me</h2>
 
                 <TextInputWithLabel
-                    label="Name"
-                    placeholder="Your name"
+                    label="My name is:"
+                    placeholder="Write your name"
                     value={name}
                     onChange={event => setName(event.target.value)}
                 />
+
                 <TextInputWithLabel
-                    label="How old are you?"
-                    placeholder="Your age"
+                    label="My age is:"
+                    placeholder="Tell Santa your age"
                     value={age}
                     onChange={event => setAge(event.target.value)}
                 />
 
                 <div>
-                    <span>Boy or girl?</span>
+                    <span>I am a...</span>
 
                     <RadioToggle
                         label1="Boy"
@@ -61,19 +63,15 @@ const EditMyInformationToSanta = ({ person }) => {
                     />
                 </div>
 
-                <label>
-                    <span>Where do you live?</span>}
-                    <input
-                        type="text"
-                        value={address}
-                        placeholder="Your address"
-                        onChange={event => setAddress(event.target.value)}
-                        inputMode={inputMode}
-                    />
-                </label>
+                <TextInputWithLabel
+                    label="My address is:"
+                    placeholder="Where do you live?"
+                    value={address}
+                    onChange={event => setAddress(event.target.value)}
+                />
 
                 <div>
-                    <span>Do you have a fireplace?</span>
+                    <span>I have a fireplace?</span>
 
                     <RadioToggle
                         label1="Yes"
@@ -86,29 +84,23 @@ const EditMyInformationToSanta = ({ person }) => {
                 </div>
 
                 <div>
-                    <span>Have you been naughty or nice this year?</span>
+                    <span>This year I have been naughty or nice?</span>
 
                     <RadioToggle
                         label1="Naughty"
                         toggleValue1="naughty"
                         label2="Nice"
                         toggleValue2="nice"
-                        value={naugtyOrNice}
+                        value={naughtyOrNice}
                         onChange={event => setNaughtyOrNice(event.target.value)}
                     />
                 </div>
 
-                <textarea
-                    onChange={event => {
-                        setLetterToSanta(event.target.value);
-                    }}
-                    value={letterToSanta}
-                />
-
                 <div>
+                    <h2>My wishes this year:</h2>
                     <TextInputWithLabel
-                        label="Your wishes this year"
-                        placeholder="Enter a wish"
+                        label="I want:"
+                        placeholder="Write a wish"
                         value={wish}
                         onChange={event => setWish(event.target.value)}
                     />
@@ -129,7 +121,16 @@ const EditMyInformationToSanta = ({ person }) => {
                     </ul>
                 </div>
 
-                <button type="submit" onClick={() => submitMyInformationToSanta()} />
+                <div>
+                    <h2>Santa, I also want to tell you...</h2>
+                    <textarea
+                        placeholder="Do you want to say something to Santa?"
+                        onChange={event => setLetterToSanta(event.target.value)}
+                        value={letterToSanta}
+                    />
+                </div>
+
+                <button type="submit" onClick={submitMyInformationToSanta} />
             </form>
         </div>
     );

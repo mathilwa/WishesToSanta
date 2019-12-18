@@ -10,20 +10,21 @@ const AboutMe = ({ me, onMeChange }) => {
             <h2>About me</h2>
 
             <TextInputWithLabel
-                label="Name"
-                placeholder="Your name"
+                label="My name is:"
+                placeholder="Write your name"
                 value={name}
                 onChange={event => onMeChange({ ...me, name: event.target.value })}
             />
+
             <TextInputWithLabel
-                label="How old are you?"
-                placeholder="Your age"
+                label="My age is:"
+                placeholder="Tell Santa your age"
                 value={age}
                 onChange={event => onMeChange({ ...me, age: event.target.value })}
             />
 
             <div>
-                <span>Boy or girl?</span>
+                <span>I am a...</span>
 
                 <RadioToggle
                     label1="Boy"
@@ -35,13 +36,15 @@ const AboutMe = ({ me, onMeChange }) => {
                 />
             </div>
 
-            <label>
-                <span>Where do you live?</span>}
-                <input type="text" value={address} placeholder="Your address" onChange={onAddressChange} />
-            </label>
+            <TextInputWithLabel
+                label="My address is:"
+                placeholder="Where do you live?"
+                value={address}
+                onChange={event => onMeChange({ ...me, address: event.target.value })}
+            />
 
             <div>
-                <span>Do you have a fireplace?</span>
+                <span>I have a fireplace?</span>
 
                 <RadioToggle
                     label1="Yes"
@@ -54,7 +57,7 @@ const AboutMe = ({ me, onMeChange }) => {
             </div>
 
             <div>
-                <span>Have you been naughty or nice this year?</span>
+                <span>This year I have been naughty or nice?</span>
 
                 <RadioToggle
                     label1="Naughty"

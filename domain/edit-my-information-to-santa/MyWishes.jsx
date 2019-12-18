@@ -4,9 +4,11 @@ import TextInputWithLabel from '../../components/text-input/TextInputWithLabel';
 
 const MyWishes = ({ wish, wishList, onWishChange, onWishListChange }) => (
     <div>
+        <h2>My wishes this year:</h2>
+
         <TextInputWithLabel
-            label="Your wishes this year"
-            placeholder="Enter a wish"
+            label="I want:"
+            placeholder="Write a wish"
             value={wish}
             onChange={event => onWishChange(event.target.value)}
         />
@@ -18,6 +20,7 @@ const MyWishes = ({ wish, wishList, onWishChange, onWishListChange }) => (
                 onWishChange('');
             }}
         />
+
         <span>Your wish list</span>
         <ul>
             {wishList.map(wish => (
@@ -26,5 +29,4 @@ const MyWishes = ({ wish, wishList, onWishChange, onWishListChange }) => (
         </ul>
     </div>
 );
-
 export default MyWishes;

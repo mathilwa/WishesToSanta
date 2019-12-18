@@ -29,66 +29,60 @@ const EditMyInformationToSanta = ({ person }) => {
 
     return (
         <div>
-            <h1>Hi, santa! This is me</h1>
+            <h1>Hi, Santa! This is me</h1>
             <form>
-                <h2>About me</h2>
+                <h2>About me:</h2>
 
                 <label>
-                    <span>Name</span>}
+                    <span>My name is:</span>
                     <input
                         type="text"
                         value={name}
-                        placeholder="Your name"
+                        placeholder="Write your name"
                         onChange={event => setName(event.target.value)}
-                        inputMode={inputMode}
                     />
                 </label>
 
                 <label>
-                    <span>How old are you?</span>}
+                    <span>My age is:</span>
                     <input
                         type="text"
                         value={age}
-                        placeholder="Your age"
+                        placeholder="Tell Santa your age"
                         onChange={event => setAge(event.target.value)}
-                        inputMode={inputMode}
                     />
                 </label>
 
                 <div>
-                    <span>Boy or girl?</span>
-                    <input
-                        type="radio"
-                        value="girl"
-                        checked={gender === 'girl'}
-                        onChange={event => setGender(event.target.value)}
-                    />
+                    <span>I am a...</span>
+                    <label>Boy</label>
                     <input
                         type="radio"
                         value="boy"
                         checked={gender === 'boy'}
                         onChange={event => setGender(event.target.value)}
                     />
+                    <label>Girl</label>
+                    <input
+                        type="radio"
+                        value="girl"
+                        checked={gender === 'girl'}
+                        onChange={event => setGender(event.target.value)}
+                    />
                 </div>
 
                 <label>
-                    <span>Where do you live?</span>}
+                    <span>My address is:</span>
                     <input
                         type="text"
                         value={address}
-                        placeholder="Your address"
+                        placeholder="Where do you live?"
                         onChange={event => setAddress(event.target.value)}
-                        inputMode={inputMode}
                     />
                 </label>
 
-                <label>
-                    Has a fireplace:
-                    <input type="checkbox" checked={person.hasFireplace} />
-                </label>
-
                 <div>
-                    <span>Do you have a fireplace?</span>
+                    <span>I have a fireplace?</span>
                     <label>Yes</label>
                     <input
                         type="radio"
@@ -106,38 +100,35 @@ const EditMyInformationToSanta = ({ person }) => {
                 </div>
 
                 <div>
-                    <span>Have you been naughty or nice?</span>
+                    <span>This year I have been naughty or nice?</span>
                     <label>Naughty</label>
-                    <input
-                        type="radio"
-                        value={true}
-                        checked={hasBeenNice}
-                        onChange={event => setHasBeenNice(event.target.value)}
-                    />
-                    <label>Nice</label>
                     <input
                         type="radio"
                         value={false}
                         checked={hasBeenNice === false}
                         onChange={event => setHasBeenNice(event.target.value)}
                     />
+
+                    <label>Nice</label>
+                    <input
+                        type="radio"
+                        value={true}
+                        checked={hasBeenNice}
+                        onChange={event => setHasBeenNice(event.target.value)}
+                    />
                 </div>
 
-                <textarea
-                    onChange={event => {
-                        setLetterToSanta(event.target.value);
-                    }}
-                    value={letterToSanta}
-                />
-
                 <div>
-                    <h2>Your wishes this year</h2>
-                    <input
-                        type="text"
-                        value={wish}
-                        placeholder="Enter your wish"
-                        onChange={event => setWish(event.target.value)}
-                    />
+                    <h2>My wishes this year:</h2>
+                    <label>
+                        <span>I want:</span>
+                        <input
+                            type="text"
+                            value={wish}
+                            placeholder="Write a wish"
+                            onChange={event => setWish(event.target.value)}
+                        />
+                    </label>
 
                     <button
                         type="button"
@@ -154,7 +145,16 @@ const EditMyInformationToSanta = ({ person }) => {
                     </ul>
                 </div>
 
-                <button type="submit" onClick={() => submitMyInformationToSanta()} />
+                <div>
+                    <h2>Santa, I also want to tell you...</h2>
+                    <textarea
+                        placeholder="Do you want to say something to Santa?"
+                        onChange={event => setLetterToSanta(event.target.value)}
+                        value={letterToSanta}
+                    />
+                </div>
+
+                <button type="submit" onClick={submitMyInformationToSanta} />
             </form>
         </div>
     );
