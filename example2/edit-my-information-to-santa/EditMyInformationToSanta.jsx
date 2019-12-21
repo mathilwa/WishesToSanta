@@ -50,18 +50,15 @@ const EditMyInformationToSanta = () => {
                     onChange={event => setAge(event.target.value)}
                 />
 
-                <fieldset>
-                    <legend>I am a...</legend>
-
-                    <RadioToggle
-                        label1="Boy"
-                        toggleValue1="boy"
-                        label2="Girl"
-                        toggleValue2="girl"
-                        value={gender}
-                        onChange={event => setGender(event.target.value)}
-                    />
-                </fieldset>
+                <RadioToggle
+                    question="I am a..."
+                    label1="Boy"
+                    toggleValue1="boy"
+                    label2="Girl"
+                    toggleValue2="girl"
+                    value={gender}
+                    onChange={event => setGender(event.target.value)}
+                />
 
                 <TextInputWithLabel
                     label="My address is:"
@@ -70,31 +67,25 @@ const EditMyInformationToSanta = () => {
                     onChange={event => setAddress(event.target.value)}
                 />
 
-                <fieldset>
-                    <legend>I have a fireplace?</legend>
+                <RadioToggle
+                    question="I have a fireplace?"
+                    label1="Yes"
+                    toggleValue1={true}
+                    label2="No"
+                    toggleValue2={false}
+                    value={hasFireplace}
+                    onChange={event => setHasFireplace(event.target.value)}
+                />
 
-                    <RadioToggle
-                        label1="Yes"
-                        toggleValue1={true}
-                        label2="No"
-                        toggleValue2={false}
-                        value={hasFireplace}
-                        onChange={event => setHasFireplace(event.target.value)}
-                    />
-                </fieldset>
-
-                <fieldset>
-                    <legend>This year I have been naughty or nice?</legend>
-
-                    <RadioToggle
-                        label1="Naughty"
-                        toggleValue1="naughty"
-                        label2="Nice"
-                        toggleValue2="nice"
-                        value={naughtyOrNice}
-                        onChange={event => setNaughtyOrNice(event.target.value)}
-                    />
-                </fieldset>
+                <RadioToggle
+                    question="This year I have been naughty or nice?"
+                    label1="Naughty"
+                    toggleValue1="naughty"
+                    label2="Nice"
+                    toggleValue2="nice"
+                    value={naughtyOrNice}
+                    onChange={event => setNaughtyOrNice(event.target.value)}
+                />
 
                 <div>
                     <h2>My wishes this year:</h2>

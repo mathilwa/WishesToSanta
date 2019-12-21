@@ -21,17 +21,16 @@ const EditMyInformationToSanta = ({ topWishList }) => {
                 }}
             />
 
-            <fieldset>
-                <legend>Sort by</legend>
-                <RadioToggle
-                    label1="Popularity"
-                    toggleValue1="popularity"
-                    label2="Alphabetically"
-                    toggleValue2="alphabetically"
-                    value={sort}
-                    onChange={event => setSort(event.target.value)}
-                />
-            </fieldset>
+            <RadioToggle
+                question="Sort by"
+                label1="Popularity"
+                toggleValue1="popularity"
+                label2="Alphabetically"
+                toggleValue2="alphabetically"
+                value={sort}
+                onChange={event => setSort(event.target.value)}
+            />
+
             <WishList wishList={searchWord ? filteredWishList : topWishList} />
         </div>
     );
