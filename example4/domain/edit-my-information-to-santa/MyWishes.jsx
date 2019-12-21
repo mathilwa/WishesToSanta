@@ -23,7 +23,7 @@ const MyWishes = ({ wish, wishList, onWishChange, onWishListChange }) => (
             }}
         />
 
-        <span>Your wish list</span>
+        <h3>Your wish list</h3>
         <WishList wishList={wishList} />
     </div>
 );
