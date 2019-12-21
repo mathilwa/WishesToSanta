@@ -33,9 +33,7 @@ const EditMyInformationToSanta = () => {
             <h1>Hi, Santa! This is me</h1>
             <form>
                 <AboutMe me={me} onMeChange={updatedMeState => setMeState(updatedMeState)} />
-
                 <MyWishes wish={wish} wishList={wishList} onWishChange={setWish} onWishListChange={setWishList} />
-
                 <LetterToSanta letterToSanta={letterToSanta} onLetterChange={setLetterToSanta} />
 
                 <button type="submit" onClick={submitMyInformationToSanta} />
