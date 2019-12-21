@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { saveMyInformationToSanta } from '../../api/santa-api';
-import TextInputWithLabel from '../../example4/components/text-input/TextInputWithLabel';
-import RadioToggle from '../../example4/components/radio-toggle/RadioToggle';
+import TextInputWithLabel from './TextInputWithLabel';
+import RadioToggle from './RadioToggle';
 
 const EditMyInformationToSanta = () => {
     const [name, setName] = useState('');
@@ -10,7 +10,7 @@ const EditMyInformationToSanta = () => {
     const [gender, setGender] = useState(null);
     const [address, setAddress] = useState('');
     const [hasFireplace, setHasFireplace] = useState(null);
-    const [hasBeenNice, setHasBeenNice] = useState(null);
+    const [naughtyOrNice, setNaughtyOrNice] = useState(null);
     const [letterToSanta, setLetterToSanta] = useState('');
     const [wish, setWish] = useState('');
     const [wishList, setWishList] = useState([]);
@@ -24,7 +24,7 @@ const EditMyInformationToSanta = () => {
             gender,
             address,
             hasFireplace,
-            hasBeenNice,
+            naughtyOrNice,
             letterToSanta,
             wishList,
         });
@@ -50,8 +50,8 @@ const EditMyInformationToSanta = () => {
                     onChange={event => setAge(event.target.value)}
                 />
 
-                <div>
-                    <span>I am a...</span>
+                <fieldset>
+                    <legend>I am a...</legend>
 
                     <RadioToggle
                         label1="Boy"
@@ -61,7 +61,7 @@ const EditMyInformationToSanta = () => {
                         value={gender}
                         onChange={event => setGender(event.target.value)}
                     />
-                </div>
+                </fieldset>
 
                 <TextInputWithLabel
                     label="My address is:"
@@ -70,8 +70,8 @@ const EditMyInformationToSanta = () => {
                     onChange={event => setAddress(event.target.value)}
                 />
 
-                <div>
-                    <span>I have a fireplace?</span>
+                <fieldset>
+                    <legend>I have a fireplace?</legend>
 
                     <RadioToggle
                         label1="Yes"
@@ -81,20 +81,20 @@ const EditMyInformationToSanta = () => {
                         value={hasFireplace}
                         onChange={event => setHasFireplace(event.target.value)}
                     />
-                </div>
+                </fieldset>
 
-                <div>
-                    <span>This year I have been naughty or nice?</span>
+                <fieldset>
+                    <legend>This year I have been naughty or nice?</legend>
 
                     <RadioToggle
                         label1="Naughty"
                         toggleValue1="naughty"
                         label2="Nice"
                         toggleValue2="nice"
-                        value={hasBeenNice}
-                        onChange={event => setHasBeenNice(event.target.value)}
+                        value={naughtyOrNice}
+                        onChange={event => setNaughtyOrNice(event.target.value)}
                     />
-                </div>
+                </fieldset>
 
                 <div>
                     <h2>My wishes this year:</h2>
@@ -114,7 +114,7 @@ const EditMyInformationToSanta = () => {
                         }}
                     />
 
-                    <span>My wish list:</span>
+                    <h3>My wish list:</h3>
                     <ul>
                         {wishList.map(wish => (
                             <li>{wish}</li>

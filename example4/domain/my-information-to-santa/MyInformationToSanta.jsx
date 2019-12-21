@@ -15,7 +15,7 @@ const MyInformationToSanta = ({ person }) => (
                 : "I don't have a fireplace, but I'll hope you come by anyway!"}
         </div>
 
-        <div>{`I have been ${person.hasBeenNice ? 'nice' : 'naughty'} this year`}</div>
+        <div>{`I have been ${person.naughtyOrNice ? 'nice' : 'naughty'} this year`}</div>
 
         <div>
             <div>My wishes this year:</div>

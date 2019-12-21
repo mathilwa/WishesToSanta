@@ -1,10 +1,9 @@
 import React from 'react';
-
-import TextInputWithLabel from '../../example4/components/text-input/TextInputWithLabel';
-import RadioToggle from '../../example4/components/radio-toggle/RadioToggle';
+import TextInputWithLabel from './TextInputWithLabel';
+import RadioToggle from './RadioToggle';
 
 const AboutMe = ({ me, onMeChange }) => {
-    const { name, age, gender, address, hasFireplace, hasBeenNice } = me;
+    const { name, age, gender, address, hasFireplace, naughtyOrNice } = me;
     return (
         <div>
             <h2>About me</h2>
@@ -23,8 +22,8 @@ const AboutMe = ({ me, onMeChange }) => {
                 onChange={event => onMeChange({ ...me, age: event.target.value })}
             />
 
-            <div>
-                <span>I am a...</span>
+            <fieldset>
+                <legend>I am a...</legend>
 
                 <RadioToggle
                     label1="Boy"
@@ -34,7 +33,7 @@ const AboutMe = ({ me, onMeChange }) => {
                     value={gender}
                     onChange={event => onMeChange({ ...me, gender: event.target.value })}
                 />
-            </div>
+            </fieldset>
 
             <TextInputWithLabel
                 label="My address is:"
@@ -43,8 +42,8 @@ const AboutMe = ({ me, onMeChange }) => {
                 onChange={event => onMeChange({ ...me, address: event.target.value })}
             />
 
-            <div>
-                <span>I have a fireplace?</span>
+            <fieldset>
+                <legend>I have a fireplace?</legend>
 
                 <RadioToggle
                     label1="Yes"
@@ -54,20 +53,20 @@ const AboutMe = ({ me, onMeChange }) => {
                     value={hasFireplace}
                     onChange={event => onMeChange({ ...me, hasFireplace: event.target.value })}
                 />
-            </div>
+            </fieldset>
 
-            <div>
-                <span>This year I have been naughty or nice?</span>
+            <fieldset>
+                <legend>This year I have been naughty or nice?</legend>
 
                 <RadioToggle
                     label1="Naughty"
                     toggleValue1="naughty"
                     label2="Nice"
                     toggleValue2="nice"
-                    value={hasBeenNice}
-                    onChange={event => onMeChange({ ...me, hasBeenNice: event.target.value })}
+                    value={naughtyOrNice}
+                    onChange={event => onMeChange({ ...me, naughtyOrNice: event.target.value })}
                 />
-            </div>
+            </fieldset>
         </div>
     );
 };

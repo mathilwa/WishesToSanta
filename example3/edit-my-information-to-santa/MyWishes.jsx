@@ -22,7 +22,7 @@ const MyWishes = ({ wish, wishList, onWishChange, onWishListChange }) => (
             }}
         />
 
-        <span>My wish list:</span>
+        <h3>My wish list:</h3>
         <ul>
             {wishList.map(wish => (
                 <li>{wish}</li>

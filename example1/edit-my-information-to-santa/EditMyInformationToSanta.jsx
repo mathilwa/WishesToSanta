@@ -7,7 +7,7 @@ const EditMyInformationToSanta = () => {
     const [gender, setGender] = useState(null);
     const [address, setAddress] = useState('');
     const [hasFireplace, setHasFireplace] = useState(null);
-    const [hasBeenNice, setHasBeenNice] = useState(null);
+    const [naughtyOrNice, setNaughtyOrNice] = useState(null);
     const [letterToSanta, setLetterToSanta] = useState('');
     const [wish, setWish] = useState('');
     const [wishList, setWishList] = useState([]);
@@ -21,7 +21,7 @@ const EditMyInformationToSanta = () => {
             gender,
             address,
             hasFireplace,
-            hasBeenNice,
+            naughtyOrNice,
             letterToSanta,
             wishList,
         });
@@ -53,23 +53,27 @@ const EditMyInformationToSanta = () => {
                     />
                 </label>
 
-                <div>
-                    <span>I am a...</span>
-                    <label>Boy</label>
-                    <input
-                        type="radio"
-                        value="boy"
-                        checked={gender === 'boy'}
-                        onChange={event => setGender(event.target.value)}
-                    />
-                    <label>Girl</label>
-                    <input
-                        type="radio"
-                        value="girl"
-                        checked={gender === 'girl'}
-                        onChange={event => setGender(event.target.value)}
-                    />
-                </div>
+                <fieldset>
+                    <legend>I am a...</legend>
+                    <label>
+                        <input
+                            type="radio"
+                            value="boy"
+                            checked={gender === 'boy'}
+                            onChange={event => setGender(event.target.value)}
+                        />
+                        Boy
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            value="girl"
+                            checked={gender === 'girl'}
+                            onChange={event => setGender(event.target.value)}
+                        />
+                        Girl
+                    </label>
+                </fieldset>
 
                 <label>
                     <span>My address is:</span>
@@ -81,42 +85,50 @@ const EditMyInformationToSanta = () => {
                     />
                 </label>
 
-                <div>
-                    <span>I have a fireplace?</span>
-                    <label>Yes</label>
-                    <input
-                        type="radio"
-                        value={true}
-                        checked={hasFireplace}
-                        onChange={event => setHasFireplace(event.target.value)}
-                    />
-                    <label>No</label>
-                    <input
-                        type="radio"
-                        value={false}
-                        checked={hasFireplace === false}
-                        onChange={event => setHasFireplace(event.target.value)}
-                    />
-                </div>
+                <fieldset>
+                    <legend>I have a fireplace?</legend>
+                    <label>
+                        <input
+                            type="radio"
+                            value={true}
+                            checked={hasFireplace}
+                            onChange={event => setHasFireplace(event.target.value)}
+                        />
+                        Yes
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            value={false}
+                            checked={hasFireplace === false}
+                            onChange={event => setHasFireplace(event.target.value)}
+                        />
+                        No
+                    </label>
+                </fieldset>
 
-                <div>
-                    <span>This year I have been naughty or nice?</span>
-                    <label>Naughty</label>
-                    <input
-                        type="radio"
-                        value={false}
-                        checked={hasBeenNice === false}
-                        onChange={event => setHasBeenNice(event.target.value)}
-                    />
+                <fieldset>
+                    <legend>This year I have been naughty or nice?</legend>
+                    <label>
+                        <input
+                            type="radio"
+                            value="naughty"
+                            checked={naughtyOrNice === 'naughty'}
+                            onChange={event => setNaughtyOrNice(event.target.value)}
+                        />
+                        Naughty
+                    </label>
 
-                    <label>Nice</label>
-                    <input
-                        type="radio"
-                        value={true}
-                        checked={hasBeenNice}
-                        onChange={event => setHasBeenNice(event.target.value)}
-                    />
-                </div>
+                    <label>
+                        <input
+                            type="radio"
+                            value="nice"
+                            checked={naughtyOrNice === 'nice'}
+                            onChange={event => setNaughtyOrNice(event.target.value)}
+                        />
+                        Nice
+                    </label>
+                </fieldset>
 
                 <div>
                     <h2>My wishes this year:</h2>
@@ -139,7 +151,7 @@ const EditMyInformationToSanta = () => {
                         }}
                     />
 
-                    <span>My wish list:</span>
+                    <h3>My wish list:</h3>
                     <ul>
                         {wishList.map(wish => (
                             <li>{wish}</li>

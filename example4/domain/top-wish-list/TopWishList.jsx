@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import { saveMyInformationToSanta } from '../../../api/santa-api';
-import AboutMe from './AboutMe';
-import MyWishes from './MyWishes';
-import LetterToSanta from './LetterToSanta';
 import TextInputWithLabel from '../../components/text-input/TextInputWithLabel';
 import WishList from '../../components/wish-list/WishList';
 import RadioToggle from '../../components/radio-toggle/RadioToggle';
@@ -25,7 +21,8 @@ const EditMyInformationToSanta = ({ topWishList }) => {
                 }}
             />
 
-            <div>
+            <fieldset>
+                <legend>Sort by</legend>
                 <RadioToggle
                     label1="Popularity"
                     toggleValue1="popularity"
@@ -34,7 +31,7 @@ const EditMyInformationToSanta = ({ topWishList }) => {
                     value={sort}
                     onChange={event => setSort(event.target.value)}
                 />
-            </div>
+            </fieldset>
             <WishList wishList={searchWord ? filteredWishList : topWishList} />
         </div>
     );
