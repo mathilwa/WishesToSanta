@@ -168,7 +168,7 @@ const EditMyInformationToSanta = () => {
                     />
                 </div>
 
-                <button type="submit" onClick={submitMyInformationToSanta} />
+                <button type="submit" value="Here you go, Santa" onClick={submitMyInformationToSanta} />
             </form>
         </div>
     );

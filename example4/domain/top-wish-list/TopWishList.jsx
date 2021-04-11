@@ -10,7 +10,7 @@ const EditMyInformationToSanta = ({ topWishList }) => {
 
     return (
         <div>
-            <h1>Top 100 wished gifts this year</h1>
+            <h1>Top 100 most wished gifts this year</h1>
             <TextInputWithLabel
                 label="Search for a wish"
                 placeholder="car, lego, a puppy.."

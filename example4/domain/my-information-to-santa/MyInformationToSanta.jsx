@@ -5,7 +5,8 @@ const MyInformationToSanta = ({ person }) => (
     <div>
         <h1>Hi, Santa! This is me</h1>
 
-        <div>My name: {person.name}</div>
+        <h2>About me:</h2>
+        <div>My name is {person.name}</div>
         <div>I am {person.age} years old</div>
         <div>I am a {person.gender}</div>
         <div>I live at {person.address}</div>
@@ -18,7 +19,7 @@ const MyInformationToSanta = ({ person }) => (
         <div>{`I have been ${person.naughtyOrNice ? 'nice' : 'naughty'} this year`}</div>
 
         <div>
-            <div>My wishes this year:</div>
+            <h2>My wishes this year:</h2>
             <WishList wishList={person.wishList} />
         </div>
 
